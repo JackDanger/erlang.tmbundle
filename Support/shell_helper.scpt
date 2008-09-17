@@ -22,7 +22,7 @@ on run argv
     
     if length of argv is 2
       set source_file to item 2 of argv
-      set compile_cmd to "c(\"" & source_file & "\")."
+      set compile_cmd to "c(\"" & source_file & "\", [{outdir, \"" & source_path & "\"}])."
       do script compile_cmd in window id tm_w_id
     else
       do script cd_command in window id tm_w_id
