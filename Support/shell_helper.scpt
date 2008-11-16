@@ -1,5 +1,6 @@
 on run argv
   set source_path to item 1 of argv
+  set beam_path to item 3 of argv
   set cd_command to "cd(\"" & source_path & "\")."
     
   tell application "Terminal"     
@@ -20,9 +21,9 @@ on run argv
 
     activate
     
-    if length of argv is 2
+    if length of argv is 2 or length of argv is 3
       set source_file to item 2 of argv
-      set compile_cmd to "c(\"" & source_file & "\", [{outdir, \"" & source_path & "\"}])."
+      set compile_cmd to "c(\"" & source_file & "\", [{outdir, \"" & beam_path & "\"}])."
       do script compile_cmd in window id tm_w_id
     else
       do script cd_command in window id tm_w_id

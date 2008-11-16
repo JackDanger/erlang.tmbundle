@@ -5,7 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>osascript "$TM_BUNDLE_SUPPORT/shell_helper.scpt" "$TM_DIRECTORY" "$TM_FILEPATH"</string>
+	<string>"$TM_RUBY" "$TM_BUNDLE_SUPPORT/compile.rb" "$TM_DIRECTORY" "$TM_FILEPATH"
+</string>
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
