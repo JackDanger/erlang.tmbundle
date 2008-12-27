@@ -5,19 +5,21 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>"${TM_RUBY:-ruby}" "$TM_BUNDLE_SUPPORT/compile.rb" "$TM_DIRECTORY" "$TM_FILEPATH"
+	<string>"${TM_RUBY:-ruby}" "$TM_BUNDLE_SUPPORT/compile.rb" "$TM_DIRECTORY" "$TM_FILEPATH" eunit
 </string>
+	<key>fallbackInput</key>
+	<string>document</string>
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
-	<string>@k</string>
+	<string>@r</string>
 	<key>name</key>
-	<string>Compile</string>
+	<string>Run EUnit</string>
 	<key>output</key>
-	<string>showAsTooltip</string>
+	<string>discard</string>
 	<key>scope</key>
 	<string>source.erlang</string>
 	<key>uuid</key>
-	<string>4B02A40A-712B-453F-B71D-A45EBA0B0A38</string>
+	<string>948F39FA-FF8D-4455-AB45-9D790F0EF18F</string>
 </dict>
 </plist>

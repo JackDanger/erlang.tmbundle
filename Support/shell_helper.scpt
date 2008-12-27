@@ -14,16 +14,21 @@ on run argv
     end repeat
 
     if tm_w_id is equal to 0 then
-      do script "echo -n -e \"\\033]0;Erlang Textmate Shell\\007\"; cd " & source_path & "; clear; erl"
+      do script "echo -n -e \"\\033]0;Erlang Textmate Shell\\007\"; cd " & source_path & "; clear; erl -pz ../ebin"
       set tm_w_id to id of front window
     end
 
     activate
     
-    if length of argv is 2 or length of argv is 3
+    if length of argv is 3 or length of argv is 4
       set beam_path to item 3 of argv
       set source_file to item 2 of argv
-      set compile_cmd to "c(\"" & source_file & "\", [{outdir, \"" & beam_path & "\"}])."
+      if length of argv is 4
+        set eunit_module to item 4 of argv
+        set compile_cmd to "{ok," & eunit_module & "} = c(\"" & source_file & "\", [{outdir, \"" & beam_path & "\"}]), eunit:test(" & eunit_module & ")."
+      else
+        set compile_cmd to "c(\"" & source_file & "\", [{outdir, \"" & beam_path & "\"}])."
+      end
       do script compile_cmd in window id tm_w_id
     else
       do script cd_command in window id tm_w_id
