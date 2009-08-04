@@ -2219,7 +2219,7 @@
 		<key>record-directive</key>
 		<dict>
 			<key>begin</key>
-			<string>^\s*+(-)\s*+(record)\s*+(\()\s*+([a-z][a-zA-Z\d@_]*+)\s*+(,)</string>
+			<string>^\s*+(-)\s*+(record)\s*+(\()\s*+(,)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
